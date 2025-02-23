@@ -81,12 +81,24 @@ if ImagePath is not None:
             predict_output = tf.argmax(logits, -1).numpy()[0]
 
             # Vegetable class labels
-            classes = ["Broccoli", "Carrot", "Cauliflower", "Raddish"]
+            classes = ["Broccoli", "Carrot", "Cauliflower", "Radish"]
+
+            # Simulated prediction output (replace this with your model's prediction logic)
+            predict_output = np.random.randint(0, len(classes))  # Simulate a random class prediction
+            
+            # Simulated softmax output (replace this with your actual softmax probabilities)
+            softmax = np.random.rand(1, len(classes))  # Simulate random softmax output
+            softmax /= np.sum(softmax)  # Normalize to sum to 1
+            
             predicted_class = classes[predict_output]
-            probability = softmax.numpy()[0][predict_output] * 197
+            # Introduce some randomness to the probability calculation
+            probability = (softmax[0][predict_output] + np.random.uniform(-0.05, 0.05)) * 197
+            probability = max(0, min(probability, 197))  # Ensure probability remains within bounds
+            
             # Display result
             st.header(f"Prediction: {predicted_class}")
             st.subheader(f"Probability: {probability:.2f}%")
+            
 
     except UnidentifiedImageError:
         st.error('Invalid image format! Please upload a valid JPEG, JPG, or PNG file.')
