@@ -81,7 +81,7 @@ if ImagePath is not None:
             predict_output = tf.argmax(logits, -1).numpy()[0]
 
             # Vegetable class labels
-            classes = ["Carrot", "Cauliflower", "Broccoli", "Raddish"]
+            classes = ["Broccoli", "Carrot", "Cauliflower", "Raddish"]
             predicted_class = classes[predict_output]
             probability = softmax.numpy()[0][predict_output] * 100
 
