@@ -10,7 +10,7 @@ def set_background():
         """
         <style>
         .stApp {
-            background: url("https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg") no-repeat center center fixed;
+            background: url("https://m.media-amazon.com/images/I/71BSNy9PN-L.jpg") no-repeat center center fixed;
             background-size: cover;
         }
         /* Remove overlay if not needed */
