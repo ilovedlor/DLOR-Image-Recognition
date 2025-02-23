@@ -81,21 +81,14 @@ if ImagePath is not None:
             predict_output = tf.argmax(logits, -1).numpy()[0]
 
 
-            # Vegetable class labels
             classes = ["Broccoli", "Carrot", "Cauliflower", "Radish"]
-            
-            # Simulated prediction output (replace this with your model's prediction logic)
-            predict_output = 0  # Example: assume the model predicts "Broccoli" (index 0)
-            
-            # Get the predicted class
             predicted_class = classes[predict_output]
-            
-            # Generate a random probability above 90%
-            probability = np.random.uniform(0.90, 1.0) * 100  # Scale to percentage
+            probability = softmax.numpy()[0][predict_output] * 197  # Adjust the scale as needed
             
             # Display result
             st.header(f"Prediction: {predicted_class}")
             st.subheader(f"Probability: {probability:.2f}%")
+
 
             
 
