@@ -83,8 +83,7 @@ if ImagePath is not None:
             # Vegetable class labels
             classes = ["Broccoli", "Carrot", "Cauliflower", "Raddish"]
             predicted_class = classes[predict_output]
-            probability = softmax.numpy()[0][predict_output] * 100
-
+            probability = softmax.numpy()[0][predict_output] * 300
             # Display result
             st.header(f"Prediction: {predicted_class}")
             st.subheader(f"Probability: {probability:.2f}%")
